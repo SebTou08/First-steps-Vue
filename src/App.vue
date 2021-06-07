@@ -31,6 +31,15 @@
       >
         Seguir
       </v-btn>
+      <v-spacer></v-spacer>
+      <v-btn
+          outlined
+          rounded
+          text
+          v-on:click="unfollowUser"
+      >
+        Dejar de seguir
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -72,6 +81,11 @@ export default {
   methods: {
     followUser(){
       this.followers++;
+    },
+    unfollowUser(){
+      if(this.followers > 0){
+        this.followers--;
+      }
     }
   },
   mounted() {
